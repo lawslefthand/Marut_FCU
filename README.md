@@ -1,1 +1,148 @@
-Project Collaboration: Indigenous Flight Control Unit (FCU) DevelopmentA Collaborative Initiative Between Team Aeroguardians and the Catalyst CommitteeThis project outlines a collaborative initiative between Team Aeroguardians of the IoIT Drone Club and the Catalyst Committee to develop an indigenous Flight Control Unit (FCU). This project aims to significantly advance drone and Unmanned Aerial Vehicle (UAV) development within the college by providing a custom-designed, locally manufactured FCU. This collaboration will leverage the infrastructure of Team Aeroguardians in drone technology and the developmental and organizational support of the Catalyst Committee.IntroductionThe Catalyst CommitteeThe Catalyst Committee is a strategic initiative established under the joint guidance of Dr. Venkat Ghodke, Training and Placement Officer, and Dr. P.B. Mane, Principal. The committee is composed of a select group of the institution's most proficient students, possessing exceptional skills in both hardware and software domains. Its primary mandate is to elevate the college's reputation for technical excellence by systematically facilitating student participation in prestigious hackathons and competitions, as well as by securing and executing impactful industry-sponsored projects.Team Aero GuardiansTeam Aero Guardians is the premier research and development team of the IoIT Drone Club, facilitated by Mr. Rahul Jadhav, Professor at the Department of Electronics and Telecommunications, specializing in the application of Unmanned Aerial Systems (UAS) to address critical societal challenges. The team's technical proficiency was recently affirmed by their victory at the Maha Hackathon Challenge 2025, a prestigious competition organized by the Ministry of Electronics and Information Technology (MeitY) and the Government of Maharashtra. Currently, the team is competing at a national level in NIDAR 2025 (National Innovation Challenge for Drone Application and Research). In parallel, Team Aero Guardians is actively engaged in a significant collaboration with the Government of Maharashtra, developing and submitting technical proposals to enhance capabilities for Search and Rescue and Disaster (SARD) operations within the state.FCU Development Plan: A Comprehensive OverviewThis document outlines the development plan for a comprehensive Flight Control Unit (FCU), encompassing both fixed-wing and quadrotor aircraft, along with essential telemetry and autonomous capabilities. The plan is structured into four main sections, each detailing critical components and functionalities.Note: The plan goes sequentially from I to IV. Progression to the next subsection is only done after successful testing.I. Fixed Wing FCUThe Fixed Wing FCU development focuses on the core functionalities required for stable and controllable flight in fixed-wing aircraft.ESC Driver Code: Development of robust and efficient Electronic Speed Controller (ESC) driver code is paramount. This code will be responsible for precisely controlling the speed and direction of the aircraft's motor(s), enabling thrust regulation for ascent, descent, and forward flight. This includes implementing various communication protocols (e.g., PWM, DShot) and ensuring reliable motor synchronization.SG90 & MG995 Servo Control Code: This section involves creating precise control code for common hobby servos like the SG90 (micro servo) and MG995 (metal gear servo). These servos will be used to manipulate control surfaces such as ailerons, elevators, and rudders, enabling the aircraft to pitch, roll, and yaw. The code will need to handle PWM signal generation, calibration, and potential feedback mechanisms for accurate positioning.PPM & PWM RX Input Code: Development of code to interpret signals from various radio receivers (RX) is crucial for manual control. This includes both Pulse Position Modulation (PPM) and Pulse Width Modulation (PWM) input parsing. The code will translate the stick movements from the remote control into corresponding commands for the FCU, allowing pilots to manually fly the aircraft. This will also involve error checking and fail-safe mechanisms in case of signal loss.BMP280/180 Barometer Interface (Altitude Readings): Integration of a barometric pressure sensor, such as the BMP280 or BMP180, is essential for accurate altitude readings. This involves developing an interface to communicate with the sensor (e.g., I2C protocol), calibrate its readings, and convert raw pressure data into precise altitude estimates. This altitude data will be critical for altitude hold features and for providing telemetry feedback to the pilot.Fixed-wing Control Surface Algorithms: This is the core of fixed-wing flight control. Development will focus on implementing sophisticated algorithms that translate desired flight maneuvers (e.g., turning, climbing, descending) into specific deflections of the control surfaces. This will likely involve PID (Proportional-Integral-Derivative) control loops to maintain stability and execute precise maneuvers, considering aerodynamic principles and aircraft dynamics.II. Quad FCUThe Quad FCU development specifically addresses the unique challenges and requirements of multirotor aircraft, particularly quadcopters.Gyroscope Interface (MPU6050 or MPU9250): Integration of an Inertial Measurement Unit (IMU) featuring a gyroscope, such as the MPU6050 or MPU9250, is fundamental for quadrotor stability. The interface code will communicate with the IMU to acquire high-frequency angular rate data, which is crucial for detecting and correcting unwanted rotations (roll, pitch, yaw). This will involve configuring the sensor, reading raw data, and potentially applying filtering techniques.3-input PID Stabilization Code: This is the heart of quadrotor flight control. Development will focus on implementing a highly optimized 3-input PID control system. This system will utilize the gyroscope data to calculate the necessary motor thrust adjustments to stabilize the quadcopter in all three rotational axes (roll, pitch, and yaw). The PID gains will need to be carefully tuned to achieve optimal flight performance, responsiveness, and stability.Quad Control Surface Algorithms: Unlike fixed-wing aircraft, quadcopters use varying motor speeds to achieve "control surface" effects. This section involves developing algorithms that translate desired flight maneuvers into differential thrust commands for each of the four motors. For instance, to pitch forward, the front motors will decrease thrust while the rear motors increase thrust. These algorithms will work in conjunction with the PID stabilization to achieve stable and controllable flight.III. Telemetry SubsystemsThe Telemetry Subsystems are designed to provide real-time communication between the aircraft and a ground station, enabling monitoring and control.Basic Wireless Telemetry Code (MAVLink protocol): Development of fundamental wireless telemetry code, leveraging the MAVLink protocol, will facilitate efficient and standardized communication. MAVLink is a widely adopted lightweight messaging protocol for unmanned vehicles. This code will be responsible for packaging sensor data, flight status, and other critical information into MAVLink packets for transmission.Wireless Telemetry Module Integration: This involves integrating a suitable wireless telemetry module (e.g., 3DR radio, ESP-NOW, LoRa) with the FCU. The integration will encompass hardware interfacing (e.g., UART communication), driver development for the specific module, and ensuring reliable data transmission and reception.Ground Station Software Design: Development of a user-friendly ground station software is essential for interacting with the aircraft. This software will be responsible for receiving and decoding MAVLink telemetry data, displaying real-time flight parameters (e.g., altitude, GPS coordinates, battery voltage), providing a graphical interface for mission planning, and potentially allowing for remote control overrides.IV. Autonomous SubsystemsThe Autonomous Subsystems aim to provide the aircraft with the capability to perform pre-programmed missions and intelligent decision-making.GPS Module Interface (Neo M8N): Integration of a Global Positioning System (GPS) module, such as the Neo M8N, is crucial for accurate positional data. The interface code will communicate with the GPS module (e.g., UART, I2C), configure its settings, and extract raw GPS data, including latitude, longitude, altitude, and velocity.NMEA/UBX Coordinate Parsing Code: Development of code to parse and interpret GPS data in common formats like NMEA and UBX is essential. NMEA (National Marine Electronics Association) and UBX (u-blox proprietary protocol) are widely used for transmitting GPS information. The parsing code will extract meaningful coordinate data and other relevant GPS parameters for use by the autonomous algorithms.Waypoint-to-Waypoint Navigation Code: This involves implementing algorithms that enable the aircraft to navigate autonomously between a series of predefined waypoints. The code will utilize GPS data to determine the aircraft's current position, calculate the bearing and distance to the next waypoint, and generate appropriate control commands to steer the aircraft along the desired path. This will likely involve proportional guidance or L1 guidance algorithms.Geofencing Code: Development of geofencing capabilities will allow for defining virtual boundaries within which the aircraft must operate. The code will continuously monitor the aircraft's GPS position and, if it deviates outside the defined geofence, trigger pre-programmed actions such as returning to a safe home location, landing, or hovering. This enhances safety and compliance.Intelligent Decision-Making Code: This advanced section focuses on developing code that enables the FCU to make autonomous decisions based on various inputs. This could include obstacle avoidance, dynamic path planning, optimizing flight efficiency, or responding to changing environmental conditions. This will likely involve integrating sensor fusion, machine learning, or rule-based systems to achieve a higher level of autonomy and adaptability.
+<img width="580" height="472" alt="image" src="https://github.com/user-attachments/assets/07e5f51a-5438-463c-ba79-83d2b13f661f" />
+
+
+# Indigenous Flight Control Unit (FCU) Development
+**A Collaborative Initiative Between Team Aeroguardians and the Catalyst Committee**
+
+This project outlines a collaborative initiative between **Team Aeroguardians** of the IoIT Drone Club and the **Catalyst Committee** to develop an indigenous Flight Control Unit (FCU).  
+The aim is to advance drone and UAV development within the college by providing a **custom-designed, locally manufactured FCU**.  
+
+This collaboration leverages:
+- **Team Aeroguardians**: Expertise in drone technology and R&D infrastructure.  
+- **Catalyst Committee**: Developmental, organizational, and project management support.  
+
+---
+
+## Introduction
+
+### The Catalyst Committee
+The Catalyst Committee is a strategic initiative guided by:
+- **Dr. Venkat Ghodke**, Training and Placement Officer  
+- **Dr. P.B. Mane**, Principal  
+
+**Composition**: Select students with exceptional skills in hardware and software.  
+
+**Primary Mandate**:
+- Elevate the college's reputation for technical excellence.
+- Facilitate participation in hackathons and competitions.
+- Execute impactful industry-sponsored projects.
+
+### Team Aero Guardians
+**Team Aero Guardians** is the premier R&D team of the IoIT Drone Club, facilitated by **Mr. Rahul Jadhav**, Professor of Electronics and Telecommunications.  
+
+**Achievements & Focus**:
+- Victory at **Maha Hackathon Challenge 2025**.
+- Competing at **NIDAR 2025** (National Innovation Challenge for Drone Application and Research).
+- Collaboration with **Government of Maharashtra** on Search and Rescue & Disaster (SARD) operations.
+
+---
+
+## FCU Development Plan
+
+The FCU development is structured into **four main modules**:  
+
+> Progression to the next subsection is only done after successful testing.
+
+---
+
+### I. Fixed Wing FCU
+Core functionalities for stable and controllable flight in fixed-wing aircraft:
+
+- **ESC Driver Code**  
+  - Control motor speed and direction.
+  - Support protocols like PWM, DShot.
+  - Ensure motor synchronization.
+
+- **SG90 & MG995 Servo Control Code**  
+  - Control surfaces: ailerons, elevators, rudders.
+  - Handle PWM signal generation, calibration, and feedback.
+
+- **PPM & PWM RX Input Code**  
+  - Interpret manual control from radio receivers.
+  - Translate stick movements to FCU commands.
+  - Implement fail-safes for signal loss.
+
+- **BMP280/180 Barometer Interface**  
+  - Accurate altitude readings via I2C.
+  - Calibrate pressure data and convert to altitude.
+
+- **Fixed-wing Control Surface Algorithms**  
+  - Implement PID control loops for pitch, roll, yaw.
+  - Translate desired maneuvers into surface deflections.
+
+---
+
+### II. Quad FCU
+Specialized development for quadrotor aircraft:
+
+- **Gyroscope Interface (MPU6050 / MPU9250)**  
+  - Acquire angular rate data for stability.
+  - Configure sensor, read raw data, apply filters.
+
+- **3-input PID Stabilization Code**  
+  - Stabilize roll, pitch, and yaw axes.
+  - Optimize motor thrust adjustments.
+
+- **Quad Control Surface Algorithms**  
+  - Convert desired maneuvers into differential motor thrust.
+  - Work alongside PID for stable flight.
+
+---
+
+### III. Telemetry Subsystems
+Enable real-time communication between aircraft and ground station:
+
+- **Basic Wireless Telemetry Code (MAVLink)**  
+  - Package sensor data and flight status.
+  - Standardized lightweight messaging protocol.
+
+- **Wireless Telemetry Module Integration**  
+  - Examples: 3DR radio, ESP-NOW, LoRa.
+  - Hardware interfacing via UART.
+  - Ensure reliable data transmission.
+
+- **Ground Station Software Design**  
+  - Receive and decode MAVLink data.
+  - Display flight parameters: altitude, GPS coordinates, battery.
+  - Graphical interface for mission planning and remote control overrides.
+
+---
+
+### IV. Autonomous Subsystems
+Provide autonomous mission capabilities:
+
+- **GPS Module Interface (Neo M8N)**  
+  - Extract latitude, longitude, altitude, velocity.
+  - Communicate via UART or I2C.
+
+- **NMEA / UBX Coordinate Parsing Code**  
+  - Parse GPS data formats.
+  - Extract meaningful positional information.
+
+- **Waypoint-to-Waypoint Navigation Code**  
+  - Navigate autonomously between predefined waypoints.
+  - Calculate bearing and distance to next waypoint.
+  - Use proportional or L1 guidance algorithms.
+
+- **Geofencing Code**  
+  - Define virtual operational boundaries.
+  - Trigger safety actions if aircraft leaves geofence.
+
+- **Intelligent Decision-Making Code**  
+  - Obstacle avoidance, dynamic path planning.
+  - Integrate sensor fusion, machine learning, or rule-based logic.
+
+---
+
+## License
+This project is **open for collaboration within the institution**.  
+For external collaborations, please contact the Catalyst Committee.
+
+---
+
+## Contributors
+- **Team Aeroguardians** – IoIT Drone Club  
+- **Catalyst Committee** – Institutional project initiative  
+
+---
+
