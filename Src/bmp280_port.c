@@ -142,11 +142,12 @@ void bmp_i2c_setup(void) {
     bmp_hal_i2c_write(0xF5, 0x0C);
 }
 
-double altitude(double press)
-{
-	double altitude = 0;
-	altitude = 44330 * (1 - ( press / 1013.25));
-	return pow(altitude,(1/5.255));
+float altitude_calc(void) {
+
+	float altitude = 0;
+	altitude = (((pow((1013.25/pressure()),(1/5.257))-1)*(temperature(0)+273.15))/0.0065);
+	return altitude;
+
 }
 
 

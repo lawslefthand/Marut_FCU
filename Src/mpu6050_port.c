@@ -55,10 +55,12 @@ void mpu_accel_read(void) {
     Az = (float)Accel_Z_RAW / 16384.0f;
 
 
-
+    //this formula basically reads and 'combines' the individual acceleration components of the x,y,z components
+    //think of it as each axis having its downwards gravitational component and then accounting for all the respective components
+    //to get your roll and pitch relative to downwards gravity vector - aryan
     float Roll  = atan2f(Ay, sqrtf(Ax * Ax + Az * Az)) * 180.0f / 3.14159f;
     float Pitch = atan2f(-Ax, sqrtf(Ay * Ay + Az * Az)) * 180.0f / 3.14159f;
- ;
+
     printf("Roll is %f and pitch is %f\n",Roll,Pitch);
 
 }
