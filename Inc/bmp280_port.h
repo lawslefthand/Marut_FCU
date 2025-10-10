@@ -22,6 +22,8 @@
 
 extern I2C_HandleTypeDef hi2c1;
 
+
+
 void bmp_i2c_setup(void);
 
 double temperature(int x);
