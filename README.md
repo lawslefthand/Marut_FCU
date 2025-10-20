@@ -15,18 +15,6 @@ This collaboration leverages:
 
 ## Introduction
 
-### The Catalyst Committee
-The Catalyst Committee is a strategic initiative guided by:
-- **Dr. Venkat Ghodke**, Training and Placement Officer  
-- **Dr. P.B. Mane**, Principal  
-
-**Composition**: Select students with exceptional skills in hardware and software.  
-
-**Primary Mandate**:
-- Elevate the college's reputation for technical excellence.
-- Facilitate participation in hackathons and competitions.
-- Execute impactful industry-sponsored projects.
-
 ### Team Aero Guardians
 **Team Aero Guardians** is the premier R&D team of the IoIT Drone Club, facilitated by **Mr. Rahul Jadhav**, Professor of Electronics and Telecommunications.  
 
