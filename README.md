@@ -22,6 +22,7 @@ This project is a collaborative initiative between **Team Aeroguardians** of the
 
   * Yash Tawar (SY ENTC)
 
+<img width="1813" height="544" alt="Gemini_Generated_Image_yx3r02yx3r02yx3r" src="https://github.com/user-attachments/assets/b1547f01-45f3-4d4a-8d86-c8d30eba62b1" />
 
 
 ## Project Phases
