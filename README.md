@@ -3,7 +3,7 @@
 
 # Marut - STM32 F4XX Blackpill Based Fixed Wing + Multirotor FCU
 
-**Marut** is an advanced Flight Control Unit (FCU) being developed at **AISSMS IOIT** in collaboration with **Team Aeroguardians**. It combines cutting-edge control algorithms, real-time telemetry, autonomous navigation for both fixed-wing and quadrotor aircraft, and supports FPV OSD through Mission Planner. Designed to run on a compact STM32 F4XX Blackpill board costing around 300 INR, Marut has the potential to become one of the most cost-effective FCUs on the market without compromising on performance, precision, or reliability.
+**Marut** is an advanced Flight Control Unit (FCU) being developed at **AISSMS IOIT**. It combines cutting-edge control algorithms, real-time telemetry, autonomous navigation for both fixed-wing and quadrotor aircraft, and supports FPV OSD through Mission Planner. Designed to run on a compact STM32 F4XX Blackpill board costing around 300 INR, Marut has the potential to become one of the most cost-effective FCUs on the market without compromising on performance, precision, or reliability.
 
 This project is a collaborative initiative between **Team Aeroguardians** of the IoIT Drone Club and the **Catalyst Committee** to develop an indigenous Flight Control Unit (FCU). The aim is to advance drone and UAV development within the college by providing a **custom-designed, locally developed FCU right from the very core**, offering high functionality at minimal cost.
 
