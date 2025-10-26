@@ -1,8 +1,5 @@
-<img width="580" height="472" alt="image" src="https://github.com/user-attachments/assets/07e5f51a-5438-463c-ba79-83d2b13f661f" />
 
-
-<img width="843" height="251" alt="image" src="https://github.com/user-attachments/assets/ca83b909-9faa-4778-b45c-9c3f8a9225df" />
-
+<img width="2048" height="588" alt="new_log" src="https://github.com/user-attachments/assets/ab09742d-f94e-4978-b8e5-fd3087f4f949" />
 
 # Marut - STM32 F4XX Blackpill Based Fixed Wing + Multirotor FCU
 
