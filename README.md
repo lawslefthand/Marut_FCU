@@ -1,5 +1,9 @@
 <img width="580" height="472" alt="image" src="https://github.com/user-attachments/assets/07e5f51a-5438-463c-ba79-83d2b13f661f" />
 
+
+<img width="843" height="251" alt="image" src="https://github.com/user-attachments/assets/ca83b909-9faa-4778-b45c-9c3f8a9225df" />
+
+
 # Marut - STM32 F4XX Blackpill Based Fixed Wing + Multirotor FCU
 
 **Marut** is an advanced Flight Control Unit (FCU) being developed at **AISSMS IOIT** in collaboration with **Team Aeroguardians**. It combines cutting-edge control algorithms, real-time telemetry, and autonomous navigation for both fixed-wing and quadrotor aircraft. Built for precision, reliability, and innovation, Marut aims to set a new standard in UAV flight control research and development.
