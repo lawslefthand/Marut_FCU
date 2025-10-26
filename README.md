@@ -24,7 +24,8 @@ This project is a collaborative initiative between **Team Aeroguardians** of the
 
 ## Project Phases
 
-> **Note:** The following phases are the ones currently planned. Autonomous navigation, takeoff, and landing support will be added after completion of these two phases.
+> **Note:** The following phases are the ones currently planned. Autonomous navigation, takeoff, landing and vtol support will be added after completion of these two core phases.
+
 
 <img width="1822" height="544" alt="Gemini_Generated_Image_g54lx0g54lx0g54l" src="https://github.com/user-attachments/assets/25d975a6-5c26-431e-b9ff-67f6fa19848b" />
 
