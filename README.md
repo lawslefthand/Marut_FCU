@@ -22,13 +22,11 @@ This project is a collaborative initiative between **Team Aeroguardians** of the
 
   * Yash Tawar (SY ENTC)
 
-<img width="1813" height="544" alt="Gemini_Generated_Image_yx3r02yx3r02yx3r" src="https://github.com/user-attachments/assets/b1547f01-45f3-4d4a-8d86-c8d30eba62b1" />
-
-
 ## Project Phases
 
 > **Note:** The following phases are the ones currently planned. Autonomous navigation, takeoff, and landing support will be added after completion of these two phases.
 
+<img width="1822" height="544" alt="Gemini_Generated_Image_g54lx0g54lx0g54l" src="https://github.com/user-attachments/assets/25d975a6-5c26-431e-b9ff-67f6fa19848b" />
 ### Fixed Wing Phase
 
 The Fixed Wing FCU development focuses on the core functionalities required for stable and controllable flight in fixed-wing aircraft.
@@ -40,6 +38,8 @@ The Fixed Wing FCU development focuses on the core functionalities required for 
 * **9-Axis IMU Driver Code**: Development of driver code for a 9-axis IMU combining MPU6050 and QMC5883L for precise orientation sensing.
 * **MAVLink Telemetry Integration**: Single-sided telemetry from the fixed-wing FCU to ground station software like QGC or Mission Planner for real-time monitoring.
 * **Fixed-wing Control Surface Algorithms**: Algorithms translating desired maneuvers into control surface deflections using PID loops for stability and precision.
+
+<img width="1824" height="544" alt="Gemini_Generated_Image_fer6s9fer6s9fer6" src="https://github.com/user-attachments/assets/dd8dff25-a098-44ce-99b4-d04326f1ef4c" />
 
 ### Multirotor Phase
 
