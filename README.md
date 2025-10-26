@@ -22,9 +22,11 @@ This project is a collaborative initiative between **Team Aeroguardians** of the
 
   * Yash Tawar (SY ENTC)
 
-> **Note:** The following phases are the ones currently planned. Autonomous navigation, takeoff, and landing support will be added after completion of these two phases.
+
 
 ## Project Phases
+
+> **Note:** The following phases are the ones currently planned. Autonomous navigation, takeoff, and landing support will be added after completion of these two phases.
 
 ### Fixed Wing Phase
 
