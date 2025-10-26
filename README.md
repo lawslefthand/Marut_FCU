@@ -17,7 +17,7 @@ This project is a collaborative initiative between **Team Aeroguardians** of the
 * **Test Pilots & Flying Team**:
 
   * Karan Tikoo (TY Comp)
-  * Shreyas Fy (FY IT)
+  * Shreyas Karade (FY IT)
 * **Aircraft Testbed Builders**:
 
   * Yash Tawar (SY ENTC)
