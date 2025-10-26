@@ -13,11 +13,13 @@ This project is a collaborative initiative between **Team Aeroguardians** of the
 
   * Karan Tikoo (TY Comp)
   * Yash Tawar (SY ENTC)
-  * Shreyas Fy
+  * Shreyas Fy (FY Comp)
+  * Siddesh Vatvikar (SY ENTC)
+  * Sharal Vishwakarma (SY ENTC)
 
 ## Project Phases
 
-### I. Fixed Wing support
+### Fixed Wing Phase
 
 The Fixed Wing FCU development focuses on the core functionalities required for stable and controllable flight in fixed-wing aircraft.
 
@@ -29,7 +31,7 @@ The Fixed Wing FCU development focuses on the core functionalities required for 
 * **MAVLink Telemetry Integration**: Single-sided telemetry from the fixed-wing FCU to ground station software like QGC or Mission Planner for real-time monitoring.
 * **9-Axis IMU Driver Code**: Development of driver code for a 9-axis IMU combining MPU6050 and QMC5883L for precise orientation sensing.
 
-### II. Multirotor support
+### Multirotor Phase
 
 The Quad FCU development addresses multirotor-specific challenges.
 
@@ -42,6 +44,5 @@ The Quad FCU development addresses multirotor-specific challenges.
 This project is **open for collaboration within the institution**.
 
 For external collaborations, please contact the Catalyst Committee.
-
 
 ---
