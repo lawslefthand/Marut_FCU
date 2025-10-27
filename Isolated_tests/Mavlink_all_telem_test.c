@@ -439,11 +439,7 @@ void send_global_position_int(void) {
     uint8_t my_component_id = 200;
     uint32_t time_boot_ms = HAL_GetTick();
 
-
     float relative_alt_meters = altitude_calc();
-
-
-
 
     int32_t lat = (int32_t)(decimalLat * 1E7);
     int32_t lon = (int32_t)(decimalLong * 1E7);
