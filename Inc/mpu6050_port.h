@@ -36,11 +36,11 @@
 #define INT_PIN_CFG 0x37
 
 
-extern I2C_HandleTypeDef hi2c2;
-extern int16_t Accel_X_RAW, Accel_Y_RAW, Accel_Z_RAW;
-extern int16_t Gyro_X_RAW, Gyro_Y_RAW, Gyro_Z_RAW;
+extern I2C_HandleTypeDef hi2c1;
 
-extern float Ax, Ay, Az;
+
+
+
 
 extern float Gx, Gy, Gz;
 
@@ -50,7 +50,7 @@ extern float mag_adj_x, mag_adj_y, mag_adj_z;
 
 void mpu_init(void);
 
-void mpu_accel_read(void);
+float mpu_accel_read(int ret);
 
 void mpu_gyro_read(void);
 
