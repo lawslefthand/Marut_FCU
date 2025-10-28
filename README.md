@@ -12,7 +12,7 @@ This project is a collaborative initiative between **Team Aeroguardians** of the
 * **Project Lead**: Aryan Basnet (TY ENTC)
 * **Firmware Team**:
 
-  * Siddesh Vatvikar (SY ENTC)
+  * Siddesh Katvikar (SY ENTC)
   * Sharal Vishwakarma (SY ENTC)
 * **Test Pilots & Flying Team**:
 
