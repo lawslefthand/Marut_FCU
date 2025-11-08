@@ -13,10 +13,9 @@
 
 extern I2C_HandleTypeDef hi2c1;
 
-int offset_calibrated = 0;      // 0 = not yet zeroed, 1 = done
-float heading_offset = 0.0f;    // startup reference heading
+int offset_calibrated = 0;     
+float heading_offset = 0.0f;    
 
-// ------------------------- I2C helpers -----------------------------
 
 void qmc_i2c_write(uint8_t reg_addr, uint8_t value) {
     HAL_I2C_Mem_Write(&hi2c1, (QMC_ADDR << 1), reg_addr,
@@ -30,7 +29,6 @@ uint8_t qmc_i2c_read(uint8_t reg_addr) {
     return value;
 }
 
-// ---------------------- Heading correction -------------------------
 
 float calibrate_heading(float current_heading, float heading_offset) {
     float calibrated_heading = current_heading - heading_offset;
@@ -43,7 +41,6 @@ float calibrate_heading(float current_heading, float heading_offset) {
     return calibrated_heading;
 }
 
-// ---------------------- Main read function -------------------------
 
 float qmc_mag_read(void) {
     float mag_x, mag_y, mag_z;
@@ -85,10 +82,10 @@ float qmc_mag_read(void) {
     return angle * (3.14159f / 180.0f);  // return radians
 }
 
-// ---------------------- Initialization -----------------------------
 
 void qmc_init(void) {
     qmc_i2c_write(0x0B, 0x08);  // Control 2
     qmc_i2c_write(0x0A, 0xCD);  // Continuous, 200Hz, full scale
     printf("QMC5883L initialized.\r\n");
 }
+
