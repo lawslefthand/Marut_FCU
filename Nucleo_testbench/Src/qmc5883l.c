@@ -72,18 +72,20 @@ float qmc_mag_read(void) {
 // try usig this 2 functions for tilt compensation 
 	
     // tilt compensation 2
-    float roll = mpu_accel_read(0)
-    float pitch = mpu_accel_read(1)
+    float roll = mpu_accel_read(0)*(3.14159f/180.0f);
+    float pitch = mpu_accel_read(1)*(3.14159f/180.0f);
 	float Xh = ( mag_z*sinf(roll) - mag_y*cosf(roll));
 	float Yh = ( mag_x*cosf(pitch)+mag_y*sinf(pitch)*sinf(roll)+mag_z*sinf(pitch)*cosf(roll) )
 	final_yaw = atan2f(num,den)* (180.0f / 3.14159f); 
 
 	// tilt compensation 3
-	float roll = mpu_accel_read(0);
-    float pitch = mpu_accel_read(1);
+	float roll = mpu_accel_read(0)*(3.14159f/180.0f);
+    float pitch = mpu_accel_read(1)*(3.14159f/180.0f);
 	float Xh = ( (mag_x * cosf(pitch)) + (mag_y*sinf(pitch)) - (mag_z*cosf(roll)*sinf(pitch)) );
 	float Yh = ( (mag_y*cosf(roll)) + (mag_z*sin(roll)) );
 	final_yaw = atan2f(-Yh,Xh) * (180.0f / 3.14159f);
+
+	//
 	
     // Raw heading in degrees
     angle = atan2f(-mag_y, mag_x) * (180.0f / 3.14159f);
@@ -110,5 +112,6 @@ void qmc_init(void) {
     qmc_i2c_write(0x0A, 0xCD);  // Continuous, 200Hz, full scale
     printf("QMC5883L initialized.\r\n");
 }
+
 
 
