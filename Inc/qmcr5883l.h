@@ -57,5 +57,9 @@ float qmc_mag_read(void);
  */
 void qmc_init(void);
 
+float calibrate_compass(float current_heading);
+float calibrate_heading(float current_heading,float heading_offset);
+
+
 
 #endif /* INC_QMC5883L_H_ */
