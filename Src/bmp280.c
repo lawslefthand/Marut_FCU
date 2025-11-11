@@ -12,13 +12,13 @@ extern I2C_HandleTypeDef hi2c1;
 void bmp_hal_i2c_write(uint8_t reg_addr, uint8_t value) {
 	uint8_t data_to_write = value;
 	HAL_I2C_Mem_Write(&hi2c1, BMP280_I2C_ADDR, reg_addr, I2C_MEMADD_SIZE_8BIT,
-			&data_to_write, 1, HAL_MAX_DELAY);
+			&data_to_write, 1, 50);
 }
 
 uint8_t bmp_hal_i2c_read(uint8_t reg_addr) {
 	uint8_t read_value = 0;
 	HAL_I2C_Mem_Read(&hi2c1, BMP280_I2C_ADDR, reg_addr, I2C_MEMADD_SIZE_8BIT,
-			&read_value, 1, HAL_MAX_DELAY);
+			&read_value, 1, 50);
 	return read_value;
 }
 
