@@ -38,8 +38,8 @@ The Fixed Wing FCU development focuses on the core functionalities required for 
 * **PPM & PWM RX Input Code**: Code to interpret signals from radio receivers (PPM & PWM), translating stick movements into FCU commands with error checking and fail-safe mechanisms.
 * **BMP280/180 Barometer Interface**: Integration of barometric sensors for accurate altitude readings, including I2C communication, calibration, and conversion to altitude for telemetry and altitude hold.
 * **9-Axis IMU Driver Code**: Development of driver code for a 9-axis IMU combining MPU6050 and QMC5883L for precise orientation sensing.
-* **MAVLink Telemetry Integration**: Single-sided telemetry from the fixed-wing FCU to ground station software like QGC or Mission Planner for real-time monitoring. <- We are here right now
-* **Fixed-wing Control Surface Algorithms**: Algorithms translating desired maneuvers into control surface deflections using PID loops for stability and precision.
+* **MAVLink Telemetry Integration**: Single-sided telemetry from the fixed-wing FCU to ground station software like QGC or Mission Planner for real-time monitoring.
+* **Fixed-wing Control Surface Algorithms**: Algorithms translating desired maneuvers into control surface deflections using PID loops for stability and precision.  <- We are here right now
 
 <img width="1824" height="544" alt="Gemini_Generated_Image_fer6s9fer6s9fer6" src="https://github.com/user-attachments/assets/dd8dff25-a098-44ce-99b4-d04326f1ef4c" />
 
