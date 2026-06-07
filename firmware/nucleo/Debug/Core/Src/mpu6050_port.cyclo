@@ -1,3 +1,0 @@
-../Core/Src/mpu6050_port.c:8:6:mpu_init	1
-../Core/Src/mpu6050_port.c:27:7:mpu_accel_read	3
-../Core/Src/mpu6050_port.c:61:6:mpu_gyro_read	1

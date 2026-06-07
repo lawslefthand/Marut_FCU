@@ -1,3 +1,0 @@
-../Core/Src/gps_parser.c:37:7:nmeaToDecimal	32	static
-../Core/Src/gps_parser.c:45:5:gpsValidate	32	static
-../Core/Src/gps_parser.c:80:6:gpsParse	112	static
