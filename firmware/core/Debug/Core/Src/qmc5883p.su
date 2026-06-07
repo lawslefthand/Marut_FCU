@@ -1,5 +1,0 @@
-../Core/Src/qmc5883p.c:21:6:qmc_i2c_write	32	static
-../Core/Src/qmc5883p.c:26:9:qmc_i2c_read	40	static
-../Core/Src/qmc5883p.c:35:7:calibrate_heading	24	static
-../Core/Src/qmc5883p.c:48:7:qmc_mag_read	32	static
-../Core/Src/qmc5883p.c:96:6:qmc_init	8	static

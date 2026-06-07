@@ -1,7 +1,0 @@
-../Core/Src/bmp280.c:23:6:bmp_hal_i2c_write	32	static
-../Core/Src/bmp280.c:29:9:bmp_hal_i2c_read	40	static
-../Core/Src/bmp280.c:37:13:bmp_load_calib	48	static
-../Core/Src/bmp280.c:62:8:temperature	96	static
-../Core/Src/bmp280.c:91:8:pressure	72	static
-../Core/Src/bmp280.c:125:6:bmp_i2c_setup	8	static
-../Core/Src/bmp280.c:134:7:altitude_calc	24	static
