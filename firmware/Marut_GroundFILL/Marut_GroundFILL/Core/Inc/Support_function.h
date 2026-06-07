@@ -21,7 +21,7 @@ void set_servo_angle(uint32_t angle, int channel);
 float range_converter(uint16_t old_value, uint16_t old_min, uint16_t old_max,
 		float new_min, float new_max);
 void set_raw_ccr(int ccr_val, int channel);
-float map_rc_to_pid(uint16_t rc_value);
+uint16_t map_rc_to_pid(uint16_t rc_value, uint16_t ch);
 void motor_check(void);
 void ESC_Calibrate(void);
 

@@ -17,6 +17,9 @@ extern TIM_HandleTypeDef htim10;
 
 extern int m_t;
 
+extern volatile uint16_t channel_min[5];
+extern volatile uint16_t channel_max[5];
+extern  uint16_t display_channels[6];
 
 uint32_t map_rc_to_motor(uint16_t rcValue) {
 
@@ -133,17 +136,34 @@ void set_raw_ccr(int ccr_val, int channel)
 	}
 }
 
-float map_rc_to_pid(uint16_t rc_value) {
-	if (rc_value > rc_max_us)
-	{
-		rc_value = rc_max_us;
+uint16_t map_rc_to_pid(uint16_t rc_value, uint16_t ch)
+{
+	// to avoid case of both are equal and computational error
+	if(channel_min[ch]==channel_max[ch]){
+		return  1500 ;
 	}
+<<<<<<< HEAD
+
+	// Clamping the rc input to avoid drift due to fluctuation
+
+	if(rc_value < channel_min[ch])
+	        rc_value = channel_min[ch];
+
+	if(rc_value > channel_max[ch])
+	        rc_value = channel_max[ch];
+	
+
+    return 1000 +
+           ((uint32_t)(rc_value - channel_min[ch]) * 1000) /
+           (channel_max[ch] - channel_min[ch]);
+=======
 	if (rc_value < rc_min_us)
 	{
 		rc_value = rc_min_us;
 	}
 	/*return (rc_value - rc_min_us) * 10.0f / (rc_max_us - rc_min_us);*/
 	return (rc_value - 1000) * 2.0f / 1000.0f;
+>>>>>>> 0efe92cbfab1ecc2e18091efa682f617a39e6f42
 }
 
 void motor_check(void) {
@@ -228,3 +248,31 @@ void ESC_Calibrate(void)
 
 
 }
+
+
+uint16_t RC_Calibration(int ch){
+
+	// setting init value for min and max value for channels as to compare with raw values
+
+	channel_min[ch] = 65535;
+	channel_max[ch] = 0;
+	// comparative statements to decide max and min value
+	for(int i =0 ; i<5000 ; i++ ){
+
+		// @aryan write led pin high
+
+		if(display_channels[ch]<channel_min[ch])
+		{
+			channel_min[ch]=display_channels[ch];
+		}
+
+		if(display_channels[ch]>channel_max[ch])
+		{
+			channel_max[ch]=display_channels[ch];
+		}
+		HAL_Delay(1);
+	}
+}
+
+
+

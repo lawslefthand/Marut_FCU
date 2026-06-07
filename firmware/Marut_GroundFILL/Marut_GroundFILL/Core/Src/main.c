@@ -364,6 +364,10 @@ volatile uint16_t ch8_dbg;
 volatile uint16_t ch9_dbg;
 volatile uint16_t ch10_dbg;
 
+volatile uint16_t channel_min[5];
+volatile uint16_t channel_max[5];
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -1722,9 +1726,17 @@ void quad_mode(void *argument)
 				error_rate_yaw = desired_rate_yaw
 						- (raw_gyro.Gz - calibration_const_global_gz); //z
 
+<<<<<<< HEAD
+				p_rate_roll_s = map_rc_to_pid(display_channels[5],5);
+				p_rate_pitch_s = map_rc_to_pid(display_channels[5],5);
+
+				i_rate_roll_s = map_rc_to_pid(display_channels[6],6);
+				i_rate_pitch_s = map_rc_to_pid(display_channels[6],6);
+=======
 				i_rate_roll = map_rc_to_pid(display_channels[5]);
 				i_rate_pitch = map_rc_to_pid(display_channels[5]);
 
+>>>>>>> 0efe92cbfab1ecc2e18091efa682f617a39e6f42
 
 				pid_equation(error_rate_roll, p_rate_roll, i_rate_roll,
 						d_rate_roll, prev_error_rate_roll, prev_iterm_rate_roll);
