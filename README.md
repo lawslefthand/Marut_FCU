@@ -92,7 +92,7 @@ Marut FCU is a student-built open-source flight control unit developed with the 
   | `VtolMode` | VTOL control path compiled into source |
 
 
-- **Status:** Active
+- **Status:** (Active)
 
 This is the primary integrated FCU target and the closest thing to the canonical custom-board firmware in the repository. It carries the broadest STM32F411 integration surface, including sensor drivers, RC capture, PWM output, and MAVLink telemetry. The fixed-wing and VTOL handlers exist in the source and can be spawned by mode logic, but they are not created at startup by default and should not be treated as validated production paths.
 ---
