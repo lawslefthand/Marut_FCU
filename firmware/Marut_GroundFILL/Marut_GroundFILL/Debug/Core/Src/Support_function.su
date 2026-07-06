@@ -1,8 +1,8 @@
-../Core/Src/Support_function.c:21:10:map_rc_to_motor	24	static
-../Core/Src/Support_function.c:37:7:negative_range	16	static
-../Core/Src/Support_function.c:42:7:range_converter	40	static
-../Core/Src/Support_function.c:60:6:set_servo_angle	32	static
-../Core/Src/Support_function.c:104:6:set_raw_ccr	16	static
-../Core/Src/Support_function.c:136:7:map_rc_to_pid	16	static
+../Core/Src/Support_function.c:20:10:map_rc_to_motor	24	static
+../Core/Src/Support_function.c:36:7:negative_range	16	static
+../Core/Src/Support_function.c:41:7:range_converter	24	static
+../Core/Src/Support_function.c:59:6:set_servo_angle	32	static
+../Core/Src/Support_function.c:103:6:set_raw_ccr	16	static
+../Core/Src/Support_function.c:135:7:map_rc_to_pid	16	static
 ../Core/Src/Support_function.c:148:6:motor_check	24	static
 ../Core/Src/Support_function.c:192:6:ESC_Calibrate	16	static

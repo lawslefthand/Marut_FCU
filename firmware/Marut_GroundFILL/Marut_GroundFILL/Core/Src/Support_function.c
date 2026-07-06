@@ -17,7 +17,6 @@ extern TIM_HandleTypeDef htim10;
 
 extern int m_t;
 
-
 uint32_t map_rc_to_motor(uint16_t rcValue) {
 
 
@@ -40,20 +39,20 @@ float negative_range(uint32_t motor_value)
 }
 
 float range_converter(uint16_t old_value, uint16_t old_min, uint16_t old_max,
-		float new_min, float new_max) {
+                      float new_min, float new_max)
+{
+    if (old_max <= old_min)
+        return new_min;
 
-	if (old_max == old_min)
-	{
-		return new_min;
-	}
+    if (old_value < old_min)
+        old_value = old_min;
+    else if (old_value > old_max)
+        old_value = old_max;
 
-	float old_range = (float) (old_max - old_min);
-	float new_range = (new_max - new_min);
-
-	float new_value = ((((float) (old_value - old_min) * new_range) / old_range)
-			+ new_min);
-
-	return new_value;
+    return new_min +
+           ((float)((int32_t)old_value - (int32_t)old_min) *
+            (new_max - new_min)) /
+           ((float)old_max - (float)old_min);
 }
 
 
@@ -143,6 +142,7 @@ float map_rc_to_pid(uint16_t rc_value) {
 		rc_value = rc_min_us;
 	}
 	return (rc_value - rc_min_us) * 10.0f / (rc_max_us - rc_min_us);
+	//return (rc_value - 1000) * 2.0f / 1000.0f;
 }
 
 void motor_check(void) {
@@ -227,3 +227,4 @@ void ESC_Calibrate(void)
 
 
 }
+
