@@ -1,0 +1,31 @@
+name: Discord Notifications
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [opened, closed, reopened]
+  issues:
+    types: [opened, closed]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set message
+        id: msg
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "text=@everyone **${{ github.actor }}** pushed to \`${{ github.repository }}\`: ${{ github.event.head_commit.message }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "text=@everyone **${{ github.actor }}** ${{ github.event.action }} PR #${{ github.event.pull_request.number }} in \`${{ github.repository }}\`: ${{ github.event.pull_request.title }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event_name }}" = "issues" ]; then
+            echo "text=@everyone **${{ github.actor }}** ${{ github.event.action }} issue #${{ github.event.issue.number }} in \`${{ github.repository }}\`: ${{ github.event.issue.title }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Send Discord notification
+        uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: "${{ steps.msg.outputs.text }}"
